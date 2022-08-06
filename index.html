@@ -16,7 +16,9 @@
 
 <body>
     <header>
-
+        <img src="/assets/images/logo.jpg" alt="logo"><br>
+        <h1>Rock Paper Scissors</h1>
+        <button class="reset-button btn"><i class="fa-solid fa-arrows-rotate"></i></button>
     </header>
 
     <div class="score-area" id="score-area">
@@ -35,17 +37,17 @@
     </div>
     <div class="game-area">
         <div id="options-wrapper">
-            <button class="btn--options" id="rock"></button>
-            <button class="btn--options" id="paper"></button>
-            <button class="btn--options" id="scissors"></button>
+            <button class="btn--options" id="rock"><i class="fas fa-hand-rock"></i></button>
+            <button class="btn--options" id="paper"><i class="fas fa-hand-paper"></i></button>
+            <button class="btn--options" id="scissors"><i class="fas fa-hand-scissors"></i></button>
         </div>
 
         <div id="moves">
-            <div class="user-move" id="user-choice"></div>
+            <div class="user-move" id="user-choice"><i class="fas fa-hand-scissors"></i></div>
 
             <div class="messages" id="dispaly-outcome"></div>
 
-            <div class="ai-move" id="ai-choice"></div>
+            <div class="ai-move" id="ai-choice"><i class="fas fa-hand-scissors"></i></div>
         </div>
     </div>
 
