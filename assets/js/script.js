@@ -37,7 +37,7 @@ function startGame (gameModeChoice){
 function playGame(playerChoice){
 const aiChoice = getComputerChoice();
 const userChoice = getPlayerChoice(playerChoice)
-const result = getWinner(userChoice, aiChoice);
+const winner = getWinner(userChoice, aiChoice);
 
 
 
@@ -73,8 +73,28 @@ function getComputerChoice(){
 
 
 
-function getWinner(){
-
+function getWinner(userChoice, aiChoice){
+    if (userChoice === aiChoice){
+        return 'draw';
+    }else if (userChoice === 'rock'){        
+        if (aiChoice === 'paper'){
+            return 'computer';          
+        } else { 
+            return 'player'
+    }
+    }else if (userChoice === 'paper') {
+    if (aiChoice === 'scissors'){
+        return 'computer';
+    } else {
+        return 'player'
+    }
+    } else if (userChoice === 'scissors') {
+    if (aiChoice === 'rock') {
+        return 'computer';
+    } else {
+        return 'player'
+    }
+    }
 }
 
 function showMoves(){
