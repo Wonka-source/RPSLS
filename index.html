@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Inconsolata:wght@600&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/2498384427.js" crossorigin="anonymous"></script>
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
     <header>
 
     </header>
-        
+
     <div class="score-area" id="score-area">
         <div class="scors">
             <h2>Your score</h2>
@@ -21,6 +29,30 @@
         <h2>Ai score</h2>
         <span id="ai-score">0</span>
     </div>
-    
+
+    <div class="messages" id="display-instructions">
+        <h2>Make a Choice</h2>
+    </div>
+    <div class="game-area">
+        <div id="options-wrapper">
+            <button class="btn--options" id="rock"></button>
+            <button class="btn--options" id="paper"></button>
+            <button class="btn--options" id="scissors"></button>
+        </div>
+
+        <div id="moves">
+            <div class="user-move" id="user-choice"></div>
+
+            <div class="messages" id="dispaly-outcome"></div>
+
+            <div class="ai-move" id="ai-choice"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/assets/js/script.js"></script>
 </body>
+
 </html>
