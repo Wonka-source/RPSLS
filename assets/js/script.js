@@ -1,5 +1,7 @@
 
-const options = document.querySelectorAll("btn--options");
+
+
+const options = document.querySelectorAll(".btn--options");
 
 const gamemodeUi = document.getElementById("game-mode");
 
@@ -32,7 +34,24 @@ function startGame (gameModeChoice){
 
 }
 
-function playGame(){
+function playGame(playerChoice){
+const aiChoice = getComputerChoice();
+const userChoice = getPlayerChoice(playerChoice)
+const result = getWinner(userChoice, aiChoice);
+
+
+
+}
+
+function getPlayerChoice(playerChoice){
+    if ( playerChoice === 0){
+        return 'rock'
+    } else if (playerChoice === 1){
+        return 'paper'
+    } else {
+        return 'scissors'
+    }
+    
 
 }
 
@@ -67,3 +86,4 @@ function showMoves(){
 function restartGame () {
     
 }
+
