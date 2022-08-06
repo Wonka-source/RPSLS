@@ -9,12 +9,16 @@ body{
     color: white;
     text-align: center;
 }
-.heading{
+header{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 3rem;
     margin-bottom: 3%;    
+    font-size: 1.6rem;
+
+}
+header h1{
+
 }
 .logo {
     height: 40px;
