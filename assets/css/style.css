@@ -56,6 +56,21 @@ header h1{
 #ai-score{
     color: rgb(77, 187, 119);
 }
+#game-mode button{
+    font-size: 1.4rem;
+    border: none;
+    display: inline;
+    /* text-align: center; */
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    border-radius: 70%;
+    width: 200px;
+    height: 200px;
+    font-weight: bold;
+    color: #fe2e4e;
+    background-color: #e5eee9;
+}
 .messages{
     display: inline-flex;
     justify-content: space-around;
