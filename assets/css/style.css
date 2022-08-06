@@ -37,7 +37,8 @@ header{
     color:rgb(238, 255, 0); 
 }
 .score-area{
-    display:flex;
+    display: none;
+    /* display:flex; */
     justify-content: space-around;
     font-size: 1.5rem;
     color: #fff;
@@ -53,7 +54,13 @@ header{
 #ai-score{
     color: rgb(77, 187, 119);
 }
+#game-mode{    
+    /* display: inline;     */
+    /* display: none; */
+}
 #game-mode button{
+    margin-top: 40px;
+    
     font-size: 1.4rem;
     border: none;
     display: inline;
@@ -76,6 +83,7 @@ header{
     display: inline-flex;
     justify-content: space-around;
     font-size: 3rem;
+    margin-top: 20px;
 }
 .game-area {
     width: 75%;
@@ -84,6 +92,10 @@ header{
     padding-top: 1%;
     text-align: center;
     margin-top: 30px;
+}
+#options-wrapper{
+    /* display: block; */
+    display: none;
 }
 .btn--options{
     color: #ffff;
@@ -102,9 +114,9 @@ header{
     color:  #ff6b81;
 }
 #moves{
-    /* display: block; */
-    display: inline-flex;
-    justify-content: space-around;
+    display: none;
+    /* display: flex; */
+    justify-content: space-evenly;
     /* text-align: center; */
     margin-top: 10%;
 }
