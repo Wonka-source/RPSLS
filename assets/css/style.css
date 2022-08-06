@@ -22,6 +22,14 @@ body{
     margin-top: 1%;
     margin-bottom: .5%;    
 }
+.reset-button{
+    color:rgb(208, 214, 117);  
+    width: 5%;
+    height: 2%;   
+    font-size: 200%;   
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
 .score-area{
     /* display:flex; */
     justify-content: space-around;
@@ -65,3 +73,4 @@ body{
 .btn--options:hover{
     background-color: #ffff;
     color:  #ff6b81;
+}
