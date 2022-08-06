@@ -1,8 +1,13 @@
 
-const options = document.querySelectorAll("btn--options")
+const options = document.querySelectorAll("btn--options");
 
-const gamemodeUi = document.getElementById("game-mode")
+const gamemodeUi = document.getElementById("game-mode");
 
+const optionsWrapper = document.getElementById("options-wrapper");
+
+const displayInstructions = document.getElementById("display-instructions");
+
+const scoreArea = document.getElementById("score-area")
 // gameMode = 0 (no game mode selected) 
 //1 = Best 2 out of 3
 //2 = Best 3 out of 5
@@ -15,7 +20,15 @@ let gameMode = 0
 
 
 
-function startGame (gameMode){
+function startGame (gameModeChoice){
+    //hide game-mode ui
+    gamemodeUi.style.display="none";
+    //show the player's options
+    optionsWrapper.style.display="block";
+
+    scoreArea.style.display="flex"
+    
+    displayInstructions.innerText = "Chose a move";
 
 }
 

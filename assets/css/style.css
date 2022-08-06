@@ -36,10 +36,14 @@ header{
     transition: ease-in;
     color:rgb(238, 255, 0); 
 }
-.score-area{
+#score-area{
     display: none;
     /* display:flex; */
     justify-content: space-around;
+}
+.score-area{
+    display: none;
+    /* display:flex; */    
     font-size: 1.5rem;
     color: #fff;
 }
