@@ -31,7 +31,7 @@ body{
     border: none;
 }
 .score-area{
-    /* display:flex; */
+    display:flex;
     justify-content: space-around;
     font-size: 1.7rem;
     color: #fff;
@@ -73,4 +73,37 @@ body{
 .btn--options:hover{
     background-color: #ffff;
     color:  #ff6b81;
+}
+#moves{
+    display: inline-flex;
+    text-align: center;
+}
+.user-move{
+    display: inline-flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-radius: 50%;
+    background-color: #fff; 
+    color: #ff6b81;
+    border: 10px solid;
+    width: 200px;
+    height: 200px;
+    font-size: 9.2rem;
+    /* margin: 10px 30px; */
+    margin-top: 30px;
+}
+.ai-move{
+    display: inline-flex;
+    justify-content: space-around;
+    padding-top:10px;
+    border-radius: 50%;
+    color: rgb(77, 187, 119);
+    background-color: #fff;
+    border: 10px solid;
+    width:200px;
+    height:200px;
+    font-size: 9.2rem;
+    margin-top: 30px;
+    /* margin: 10px 30px; */
+
 }
