@@ -16,3 +16,9 @@ body{
     font-size: 3rem;
     margin-bottom: 3%;    
 }
+.logo {
+    height: 40px;
+    padding-right: 5px;
+    margin-top: 1%;
+    margin-bottom: .5%;    
+}
