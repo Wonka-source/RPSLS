@@ -22,3 +22,25 @@ body{
     margin-top: 1%;
     margin-bottom: .5%;    
 }
+.score-area{
+    /* display:flex; */
+    justify-content: space-around;
+    font-size: 1.7rem;
+    color: #fff;
+}
+.scores{
+    display: inline-block;
+    padding: 20px;
+    font-weight: bold;
+}
+#user-score{
+    color: #ff6b81;;
+}
+#ai-score{
+    color: rgb(77, 187, 119);
+}
+.messages{
+    display: block;
+    justify-content: space-around;
+    font-size: 3rem;
+}
