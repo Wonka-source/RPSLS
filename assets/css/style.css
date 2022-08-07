@@ -63,11 +63,12 @@ header {
 
 #user-score {
     color: #ff6b81;
-    ;
+    font-size: 130%;
 }
 
 #ai-score {
     color: rgb(77, 187, 119);
+    font-size: 130%;
 }
 
 #game-mode {
@@ -154,7 +155,7 @@ header {
     /* display: inline-flex; */
     /* justify-content: space-around; */
     padding-top: 10px;
-    border-radius: 50%;
+    border-radius: 25%;
     background-color: #fff;
     color: #ff6b81;
     border: 10px solid;
@@ -163,7 +164,7 @@ header {
     font-size: 9.2rem;
 
     margin-top: 30px;
-    transition: ease 2s;
+    /* transition: ease 2s; */
     /* animation-name: show-moves;
     animation-duration:0.5s ; */
 }
@@ -171,9 +172,9 @@ header {
 .ai-move {
 
     padding-top: 10px;
-    border-radius: 50%;
-    color: rgb(77, 187, 119);
-    background-color: #fff;
+    border-radius: 25%;
+    color: #fff;
+    background-color:  rgb(77, 187, 119);
     border: 10px solid;
     width: 200px;
     height: 200px;
@@ -187,10 +188,20 @@ header {
     width: 100%;
     left: 15%;
     right: 15%;
-    bottom: 10;       
+    bottom: 10;    
+    font-size: 120%;   
     min-height: 80px;
     border: solid 1px;
     max-width: 70%;
     color: #fff;
     background:#0468a7;
 }
+ 
+@media screen and (max-width: 480px) {
+    .ai-move, .user-move{ 
+        width: 100px;
+        height: 100px;
+        font-size: 4.6rem;
+        padding-top: 3.5px;
+    }
+  }

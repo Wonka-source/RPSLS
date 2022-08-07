@@ -24,7 +24,7 @@ const aiMove = document.getElementById("ai-move");
 // gameMode = 0 (no game mode selected) 
 let gameMode = 0
 
-displayInstructions.innerText = "⭡ Choose a game mode ⭡";
+displayInstructions.innerText = "⭡ Choose a game mode ";
 
 
 
