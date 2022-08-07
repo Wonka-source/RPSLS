@@ -34,10 +34,10 @@ function startGame(gameModeChoice) {
     gameModeUi.style.display = "none";
     //show the player's options
     optionsWrapper.style.display = "block";
-
+    gameMode = gameModeChoice;
     scoreArea.style.display = "flex";
 
-    displayInstructions.innerText = "Chose a move";
+    displayInstructions.innerText = "Chose a move";   
 
 }
 /** 
@@ -47,6 +47,16 @@ function playGame(playerChoice) {
     let aiChoice = getComputerChoice();
     let userChoice = getPlayerChoice(playerChoice);
     showMoves(userChoice, aiChoice, getWinner(userChoice, aiChoice));
+    if (isGameOver() ) {
+        
+        if (userScore.innerText > aiScore.innerText){
+            displayInstructions.innerHTML = `<h2>You Win! <br> Hit RESET to play again </h2>`
+            optionsWrapper.style.display = "none";
+        } else {
+            displayInstructions.innerHTML = `<h2>You Loose! <br> Hit RESET to play again </h2>`
+                optionsWrapper.style.display = "none";
+    } 
+}
 
 
 
@@ -132,7 +142,8 @@ function showMoves(userChoice, aiChoice, winner) {
 //2 = Best 3 out of 5
 //3 = Best 4 out of 7
 
-function isGameOver () {
+function isGameOver() {
+    
     if (userScore.innerText > gameMode || aiScore.innerText > gameMode){
         return true;
     } else { 
