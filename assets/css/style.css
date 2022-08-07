@@ -148,6 +148,9 @@ header {
 
 #display-outcome {
     display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 500%;
 }
 
 .user-move {
@@ -203,5 +206,8 @@ header {
         height: 100px;
         font-size: 4.6rem;
         padding-top: 3.5px;
+    }
+    #display-outcome{
+        font-size: 300%;
     }
   }
