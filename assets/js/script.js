@@ -1,4 +1,3 @@
-// const options = document.querySelectorAll(".btn--options");
 
 const gameModeUi = document.getElementById("game-mode");
 
@@ -33,7 +32,7 @@ let gameMode = 0
 
 
 
-
+/** */
 function startGame(gameModeChoice) {
     //hide game-mode ui
     gameModeUi.style.display = "none";
@@ -45,7 +44,9 @@ function startGame(gameModeChoice) {
     displayInstructions.innerText = "Chose a move";
 
 }
-
+/** 
+ * The main game function, called when a player clicks one of the options paper scissors or rock
+*/
 function playGame(playerChoice) {
     let aiChoice = getComputerChoice();
     let userChoice = getPlayerChoice(playerChoice);
@@ -54,6 +55,7 @@ function playGame(playerChoice) {
 
 
 }
+
 
 function getPlayerChoice(playerChoice) {
     if (playerChoice === 0) {
@@ -123,12 +125,24 @@ function showMoves(userChoice, aiChoice, winner) {
         displayInstructions.innerText = "Hard Luck";
         displayOutcome.innerText = "You Loose";
     } else {
-        displayInstructions.innerText = "Try Again";
+        displayInstructions.innerText = "Try Again!";
         displayOutcome.innerText = "Its a Draw";
     }
 
 }
 
-// function restartGame () {
+function isGameOver ()
 
-// }
+
+
+function resetButton() {
+    gameMode = 0;
+    userScore.innerText = 0;
+    aiScore.innerText = 0;
+    displayInstructions.innerText = "Choose a game mode";
+    gameModeUi.style.display = "block";
+    optionsWrapper.style.display = "none";
+    moves.style.display="none"
+    
+}
+
