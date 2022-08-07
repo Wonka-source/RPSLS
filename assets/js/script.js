@@ -51,11 +51,11 @@ function playGame(playerChoice) {
     if (isGameOver()) {
 
         if (userScore.innerText > aiScore.innerText) {
-            displayInstructions.innerHTML = `<h3>⭡ <br> Game Over <br><br> You Win! <br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3>⭡Game Over <br> You Win The Match <br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
             displayOutcome.style.display = "none";
         } else {
-            displayInstructions.innerHTML = `<h3>⭡ <br> Game Over <br><br> You Loose <br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3>⭡ Game Over<br> You Loose <br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
             displayOutcome.style.display = "none";
         }
@@ -126,16 +126,16 @@ function showMoves(userChoice, aiChoice, winner) {
     aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i>`;
     if (winner === 'player') {
         userScore.innerText++;
-        displayInstructions.innerText = "Nice";
-        displayOutcome.innerText = "You Win";
+        displayInstructions.innerText = "Player wins";
+        displayOutcome.innerText = "Nice";
 
     } else if (winner === 'computer') {
         aiScore.innerText++;
-        displayInstructions.innerText = "Hard Luck";
+        displayInstructions.innerText = "Ai-Wins";
         displayOutcome.innerText = "You Loose";
     } else {
-        displayInstructions.innerText = "Try Again!";
-        displayOutcome.innerText = "Its a Draw";
+        displayInstructions.innerText = "Its a Draw";
+        displayOutcome.innerText = "Try Again!";
     }
 
 }
