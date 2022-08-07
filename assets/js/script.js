@@ -1,15 +1,23 @@
+// const options = document.querySelectorAll(".btn--options");
 
-
-
-const options = document.querySelectorAll(".btn--options");
-
-const gamemodeUi = document.getElementById("game-mode");
+const gameModeUi = document.getElementById("game-mode");
 
 const optionsWrapper = document.getElementById("options-wrapper");
 
 const displayInstructions = document.getElementById("display-instructions");
 
-const scoreArea = document.getElementById("score-area")
+const displayOutcome = document.getElementById("display-outcome");
+
+
+const scoreArea = document.getElementById("score-area");
+
+const userScore = document.getElementById("user-score");
+
+const aiScore = document.getElementById("ai-score");
+
+const userMove = document.getElementById("user-move");
+
+const aiMove = document.getElementById("ai-move");
 // gameMode = 0 (no game mode selected) 
 //1 = Best 2 out of 3
 //2 = Best 3 out of 5
@@ -22,88 +30,100 @@ let gameMode = 0
 
 
 
-function startGame (gameModeChoice){
+function startGame(gameModeChoice) {
     //hide game-mode ui
-    gamemodeUi.style.display="none";
+    gameModeUi.style.display = "none";
     //show the player's options
-    optionsWrapper.style.display="block";
+    optionsWrapper.style.display = "block";
 
-    scoreArea.style.display="flex"
-    
+    scoreArea.style.display = "flex";
+
     displayInstructions.innerText = "Chose a move";
 
 }
 
-function playGame(playerChoice){
-const aiChoice = getComputerChoice();
-const userChoice = getPlayerChoice(playerChoice)
-const winner = getWinner(userChoice, aiChoice);
+function playGame(playerChoice) {
+    let aiChoice = getComputerChoice();
+    let userChoice = getPlayerChoice(playerChoice);
+    showMoves(userChoice, aiChoice, getWinner(userChoice, aiChoice));
 
 
 
 }
 
-function getPlayerChoice(playerChoice){
-    if ( playerChoice === 0){
-        return 'rock'
-    } else if (playerChoice === 1){
-        return 'paper'
+function getPlayerChoice(playerChoice) {
+    if (playerChoice === 0) {
+        return 'rock';
+    } else if (playerChoice === 1) {
+        return 'paper';
     } else {
-        return 'scissors'
+        return 'scissors';
     }
-    
+
 
 }
 
 
 
-function getComputerChoice(){
-    let random = Math.floor(Math.random()*3);
+function getComputerChoice() {
+    let random = Math.floor(Math.random() * 3);
     if (random === 0) {
         return 'rock';
-    } else if( random === 1){
+    } else if (random === 1) {
         return 'paper';
     } else {
         return 'scissors';
     }
 }
-    
 
 
 
 
 
-function getWinner(userChoice, aiChoice){
-    if (userChoice === aiChoice){
+
+function getWinner(userChoice, aiChoice) {
+    if (userChoice === aiChoice) {
         return 'draw';
-    }else if (userChoice === 'rock'){        
-        if (aiChoice === 'paper'){
-            return 'computer';          
-        } else { 
-            return 'player'
-    }
-    }else if (userChoice === 'paper') {
-    if (aiChoice === 'scissors'){
-        return 'computer';
-    } else {
-        return 'player'
-    }
+    } else if (userChoice === 'rock') {
+        if (aiChoice === 'paper') {
+            return 'computer';
+        } else {
+            return 'player';
+        }
+    } else if (userChoice === 'paper') {
+        if (aiChoice === 'scissors') {
+            return 'computer';
+        } else {
+            return 'player';
+        }
     } else if (userChoice === 'scissors') {
-    if (aiChoice === 'rock') {
-        return 'computer';
+        if (aiChoice === 'rock') {
+            return 'computer';
+        } else {
+            return 'player';
+        }
+    }
+}
+
+function showMoves(userChoice, aiChoice, winner) {
+    userMove.innerHtml = `<i  class="user-move fas fa-hand-${userChoice}"></i>`;
+    aiMove.innerHtml = `<i  class="user-move fas fa-hand-${aiChoice}"></i>`;
+    if (winner === 'player') {
+        userScore.innerText++;
+        displayInstructions.innerText = "Nice";
+        displayOutcome.innerText = "You Win";
+
+    } else if (winner === 'computer') {
+        aiScore.innerText++;
+        displayInstructions.innerText = "Hard Luck";
+        displayOutcome.innerText = "You Loose";
     } else {
-        return 'player'
+        displayInstructions.innerText = "Try Again";
+        displayOutcome.innerText = "Its a Draw";
     }
-    }
-}
-
-function showMoves(){
 
 }
 
+// function restartGame () {
 
-
-function restartGame () {
-    
-}
-
+// }
