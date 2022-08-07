@@ -15,9 +15,13 @@ const userScore = document.getElementById("user-score");
 
 const aiScore = document.getElementById("ai-score");
 
+const moves = document.getElementById("moves");
+
 const userMove = document.getElementById("user-move");
 
 const aiMove = document.getElementById("ai-move");
+
+
 // gameMode = 0 (no game mode selected) 
 //1 = Best 2 out of 3
 //2 = Best 3 out of 5
@@ -106,8 +110,9 @@ function getWinner(userChoice, aiChoice) {
 }
 
 function showMoves(userChoice, aiChoice, winner) {
-    userMove.innerHtml = `<i  class="user-move fas fa-hand-${userChoice}"></i>`;
-    aiMove.innerHtml = `<i  class="user-move fas fa-hand-${aiChoice}"></i>`;
+    moves.style.display="flex"
+    userMove.innerHTML = `<i  class="user-move fas fa-hand-${userChoice}"></i>`;
+    aiMove.innerHTML = `<i  class="user-move fas fa-hand-${aiChoice}"></i>`;
     if (winner === 'player') {
         userScore.innerText++;
         displayInstructions.innerText = "Nice";
