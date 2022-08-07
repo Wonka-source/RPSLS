@@ -1,4 +1,3 @@
-
 const gameModeUi = document.getElementById("game-mode");
 
 const optionsWrapper = document.getElementById("options-wrapper");
@@ -7,6 +6,7 @@ const displayInstructions = document.getElementById("display-instructions");
 
 const displayOutcome = document.getElementById("display-outcome");
 
+const rules = document.getElementById("rules");
 
 const scoreArea = document.getElementById("score-area");
 
@@ -37,28 +37,29 @@ function startGame(gameModeChoice) {
     gameMode = gameModeChoice;
     scoreArea.style.display = "flex";
     displayOutcome.style.display = "block";
-    displayInstructions.innerText = "⭣ Chose a move ⭣";   
+    displayInstructions.innerText = " Chose a move ";
+    rules.style.display= "none"
 
 }
 /** 
  * The main game function, called when a player clicks one of the options paper scissors or rock
-*/
+ */
 function playGame(playerChoice) {
     let aiChoice = getComputerChoice();
     let userChoice = getPlayerChoice(playerChoice);
     showMoves(userChoice, aiChoice, getWinner(userChoice, aiChoice));
-    if (isGameOver() ) {
-        
-        if (userScore.innerText > aiScore.innerText){
+    if (isGameOver()) {
+
+        if (userScore.innerText > aiScore.innerText) {
             displayInstructions.innerHTML = `<h3>⭡ <br> You Win! <br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
             displayOutcome.style.display = "none";
         } else {
             displayInstructions.innerHTML = `<h3>⭡ <br>You Loose <br> Hit RESET to play again </h3>`
-                optionsWrapper.style.display = "none";
-                displayOutcome.style.display = "none";
-    } 
-}
+            optionsWrapper.style.display = "none";
+            displayOutcome.style.display = "none";
+        }
+    }
 
 
 
@@ -120,7 +121,7 @@ function getWinner(userChoice, aiChoice) {
 }
 
 function showMoves(userChoice, aiChoice, winner) {
-    moves.style.display="flex"
+    moves.style.display = "flex"
     userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i>`;
     aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i>`;
     if (winner === 'player') {
@@ -145,10 +146,10 @@ function showMoves(userChoice, aiChoice, winner) {
 //3 = Best 4 out of 7
 
 function isGameOver() {
-    
-    if (userScore.innerText > gameMode || aiScore.innerText > gameMode){
+
+    if (userScore.innerText > gameMode || aiScore.innerText > gameMode) {
         return true;
-    } else { 
+    } else {
         return false;
     }
 }
@@ -164,7 +165,7 @@ function resetButton() {
     displayInstructions.innerText = "⭡ Choose a game mode ⭡";
     gameModeUi.style.display = "block";
     optionsWrapper.style.display = "none";
-    moves.style.display="none"
-    
-}
+    moves.style.display = "none"
+    rules.style.display= "block"
 
+}
