@@ -111,8 +111,8 @@ function getWinner(userChoice, aiChoice) {
 
 function showMoves(userChoice, aiChoice, winner) {
     moves.style.display="flex"
-    userMove.innerHTML = `<i  class="user-move fas fa-hand-${userChoice}"></i>`;
-    aiMove.innerHTML = `<i  class="user-move fas fa-hand-${aiChoice}"></i>`;
+    userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i>`;
+    aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i>`;
     if (winner === 'player') {
         userScore.innerText++;
         displayInstructions.innerText = "Nice";

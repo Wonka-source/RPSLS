@@ -137,7 +137,7 @@ header{
     font-size: 9.2rem;
     /* margin: 10px 30px; */
     margin-top: 30px;
-    transition: ease 0.5s;
+    transition: ease 2s;
 }
 .ai-move{
     /* display: inline-flex; */
