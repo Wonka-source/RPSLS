@@ -51,13 +51,13 @@ function playGame(playerChoice) {
     if (isGameOver()) {
 
         if (userScore.innerText > aiScore.innerText) {
-            displayInstructions.innerHTML = `<h3>⭡Game Over <br> You Win The Match <br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span><br>Player Wins <br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
-            displayOutcome.style.display = "none";
+            displayOutcome.style.display = "block";
         } else {
-            displayInstructions.innerHTML = `<h3>⭡ Game Over<br> You Loose <br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span> <br> Comp Wins<br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
-            displayOutcome.style.display = "none";
+            displayOutcome.style.display = "block";
         }
     }
 
@@ -122,20 +122,20 @@ function getWinner(userChoice, aiChoice) {
 
 function showMoves(userChoice, aiChoice, winner) {
     moves.style.display = "flex"
-    userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i>`;
-    aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i>`;
+    userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px;">${userChoice}</p>`;
+    aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px; color:rgb(77, 187, 119);">${aiChoice}</p>`;
     if (winner === 'player') {
         userScore.innerText++;
-        displayInstructions.innerText = "Player wins";
-        displayOutcome.innerText = "Nice";
+        displayInstructions.innerHTML = `<span style='color:#ff6b81;'> Player wins`
+        displayOutcome.innerHTML = `<span style='color:#ff6b81;'>+1</span><br>Player`
 
     } else if (winner === 'computer') {
         aiScore.innerText++;
-        displayInstructions.innerText = "Ai-Wins";
-        displayOutcome.innerText = "You Loose";
+        displayInstructions.innerHTML =`<span style='color:rgb(77, 187, 119);'>Comp-Wins</span>`
+        displayOutcome.innerHTML = `<span style='color:rgb(77, 187, 119);'>+1</span><br>Comp`
     } else {
-        displayInstructions.innerText = "Its a Draw";
-        displayOutcome.innerText = "Try Again!";
+        displayInstructions.innerText = "Choose again";
+        displayOutcome.innerHTML = "It's<br>a Draw";
     }
 
 }
@@ -167,5 +167,6 @@ function resetButton() {
     optionsWrapper.style.display = "none";
     moves.style.display = "none"
     rules.style.display= "block"
+    scoreArea.style.display= "none"
 
 }

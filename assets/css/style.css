@@ -58,16 +58,24 @@ header {
     font-weight: bold;
     background: linear-gradient(rgba(229, 238, 233, 0.9), rgba(239, 255, 246, 0.8));
     border-radius: 20%;
+    /* width: 10%;
+    height: 10%; */
 }
-
+.scores h2{
+    width:150px;    
+}
 #user-score {
     color: #ff6b81;
-    font-size: 150%;
+    /* font-size: 120%; */
+    width: 150px;
+    height:150px
 }
 
 #ai-score {
     color: rgb(77, 187, 119);
-    font-size: 150%;
+    /* font-size: 100%; */
+    width: 200px;
+    height:150px
 }
 
 #game-mode button {
@@ -83,7 +91,7 @@ header {
     height: 200px;
     font-weight: bold;
     color: #fe2e4e;
-    background-color: #e5eee9;
+    background-color:linear-gradient(rgba(174, 188, 180, 0.9), rgba(108, 117, 112, 0.8));
 }
 
 #game-mode button:hover {
@@ -131,7 +139,7 @@ header {
 
 #moves {
     display: none;    
-    justify-content: space-evenly;    
+    justify-content:center;    
     margin-top: 2%;
 }
 
@@ -143,6 +151,7 @@ header {
 }
 
 .user-move {
+    float:left ;
     padding-top: 10px;
     border-radius: 25%;
     background-color: #fff;
@@ -152,9 +161,11 @@ header {
     height: 200px;
     font-size: 9.2rem;
     margin-top: 30px;  
+    margin-right: 6px;
 }
 
 .ai-move {
+    float: right;
     padding-top: 10px;
     border-radius: 25%;
     color: #fff;
@@ -163,7 +174,11 @@ header {
     width: 200px;
     height: 200px;
     font-size: 9.2rem;
-    margin-top: 30px;    
+    margin-top: 30px;
+    margin-left: 6px;    
+}
+i p {
+    text-transform: uppercase;
 }
 #rules{
     position: absolute;
@@ -178,7 +193,7 @@ header {
     color: #fff;
     background:#0468a7;
 }
- 
+
 @media screen and (max-width: 480px) {
     .ai-move, .user-move{ 
         width: 100px;
@@ -189,4 +204,19 @@ header {
     #display-outcome{
         font-size: 300%;
     }
+    .messages, header, #game-mode button, .footer{
+        font-size: 150%;
+        height: 90%;
+    }
+    #game-mode button, .scores{
+        font-size: 0.9rem;
+        height: 75px;
+        width: 75px;
+    }
+    .scores{
+        /* height: 50%; */
+        width: 50%;
+    }
+
+
   }

@@ -24,13 +24,13 @@
 
     <div id="score-area">
         <div class="scores">
-            <h2>Your score:</h2>
-            <span id="user-score">0</span>
+            <h2>Player:<span id="user-score">0</span></h2>
+            
         </div>
 
         <div class="scores">
-            <h2>Ai score:</h2>
-            <span id="ai-score">0</span>
+            <h2>Comp:<span id="ai-score">0</span></h2>
+            
         </div>
     </div>
     <div id="game-mode">
@@ -51,18 +51,18 @@
 
         <div id="moves">
 
-            <div id="user-move" class="user-move"><i class="fas fa-hand-scissors"></i></div>
+            <div id="user-move" class="user-move"><i class="fas fa-hand-scissors"></i><p></p></div>
+            
+            <h4 class="messages" id="display-outcome"></h4>
 
-            <div class="messages" id="display-outcome"></div>
-
-            <div id="ai-move" class="ai-move"> <i class="fas fa-hand-scissors"></i> </div>
+            <div id="ai-move" class="ai-move"> <i class="fas fa-hand-scissors"></i><p></p> </div>
 
         </div>
     </div>
     <footer id="rules">
-           <h2>Rules</h2>
+           <h2 class="footer">Rules</h2>
            <br>            
-           <p>Scissors cuts Paper | Paper covers Rock | Rock smashes Scissors</p>        
+           <p class="footer">Scissors cuts Paper | Paper covers Rock | Rock smashes Scissors</p>        
      </footer>
 
 
