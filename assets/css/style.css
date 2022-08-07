@@ -122,7 +122,10 @@ header{
     /* display: flex; */
     justify-content: space-evenly;
     /* text-align: center; */
-    margin-top: 10%;
+    margin-top: 2%;
+}
+#display-outcome{
+    display: block;
 }
 .user-move{
     
@@ -139,8 +142,8 @@ header{
 
     margin-top: 30px;
     transition: ease 2s;
-    animation-name: show-moves;
-    animation-duration:0.5s ;
+    /* animation-name: show-moves;
+    animation-duration:0.5s ; */
 }
 .ai-move{
 
@@ -153,7 +156,7 @@ header{
     height:200px;
     font-size: 9.2rem;
     margin-top: 30px;
-    animation-name: show-moves;
-    animation-duration:0.5s ;
+    /* animation-name: show-moves;
+    animation-duration:0.5s ; */
 }
 

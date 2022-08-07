@@ -24,7 +24,7 @@ const aiMove = document.getElementById("ai-move");
 // gameMode = 0 (no game mode selected) 
 let gameMode = 0
 
-
+displayInstructions.innerText = "⭡ Choose a game mode ⭡";
 
 
 
@@ -36,8 +36,8 @@ function startGame(gameModeChoice) {
     optionsWrapper.style.display = "block";
     gameMode = gameModeChoice;
     scoreArea.style.display = "flex";
-
-    displayInstructions.innerText = "Chose a move";   
+    displayOutcome.style.display = "block";
+    displayInstructions.innerText = "⭣ Chose a move ⭣";   
 
 }
 /** 
@@ -50,11 +50,13 @@ function playGame(playerChoice) {
     if (isGameOver() ) {
         
         if (userScore.innerText > aiScore.innerText){
-            displayInstructions.innerHTML = `<h2>You Win! <br> Hit RESET to play again </h2>`
+            displayInstructions.innerHTML = `<h3>⭡ <br> You Win! <br> Hit RESET to play again </h3>`
             optionsWrapper.style.display = "none";
+            displayOutcome.style.display = "none";
         } else {
-            displayInstructions.innerHTML = `<h2>You Loose! <br> Hit RESET to play again </h2>`
+            displayInstructions.innerHTML = `<h3>⭡ <br>You Loose <br> Hit RESET to play again </h3>`
                 optionsWrapper.style.display = "none";
+                displayOutcome.style.display = "none";
     } 
 }
 
@@ -159,7 +161,7 @@ function resetButton() {
     gameMode = 0;
     userScore.innerText = 0;
     aiScore.innerText = 0;
-    displayInstructions.innerText = "Choose a game mode";
+    displayInstructions.innerText = "⭡ Choose a game mode ⭡";
     gameModeUi.style.display = "block";
     optionsWrapper.style.display = "none";
     moves.style.display="none"
