@@ -24,7 +24,7 @@ const aiMove = document.getElementById("ai-move");
 // gameMode = 0 (no game mode selected) 
 let gameMode = 0
 
-displayInstructions.innerText = "⭡ Choose a game mode ";
+displayInstructions.innerHTML = `⭡ Choose a game mode to<br> play against the Computer`
 
 
 
@@ -37,8 +37,8 @@ function startGame(gameModeChoice) {
     gameMode = gameModeChoice;
     scoreArea.style.display = "flex";
     displayOutcome.style.display = "block";
-    displayInstructions.innerText = " Chose a move ";
-    rules.style.display= "none"
+    displayInstructions.innerText = "Pick a move";
+    rules.style.display = "none"
 
 }
 /** 
@@ -71,27 +71,33 @@ function getPlayerChoice(playerChoice) {
         return 'rock';
     } else if (playerChoice === 1) {
         return 'paper';
-    } else {
+    } else if (playerChoice === 2) {
         return 'scissors';
+    } else if (playerChoice === 3) {
+        return 'lizard';
+    } else {
+        return 'spock';
     }
-
 
 }
 
 
 
 function getComputerChoice() {
-    let random = Math.floor(Math.random() * 3);
+    let random = Math.floor(Math.random() * 5);
     if (random === 0) {
         return 'rock';
     } else if (random === 1) {
         return 'paper';
-    } else {
+    } else if (random === 2) {
         return 'scissors';
+    } else if (random === 3) {
+        return 'lizard';
+    } else {
+        return 'spock';
     }
+
 }
-
-
 
 
 
@@ -100,19 +106,31 @@ function getWinner(userChoice, aiChoice) {
     if (userChoice === aiChoice) {
         return 'draw';
     } else if (userChoice === 'rock') {
-        if (aiChoice === 'paper') {
+        if (aiChoice === 'paper' || aiChoice === 'spock') {
             return 'computer';
         } else {
             return 'player';
         }
     } else if (userChoice === 'paper') {
-        if (aiChoice === 'scissors') {
+        if (aiChoice === 'scissors' || aiChoice == 'lizard') {
             return 'computer';
         } else {
             return 'player';
         }
     } else if (userChoice === 'scissors') {
-        if (aiChoice === 'rock') {
+        if (aiChoice === 'rock' || aiChoice === 'spock') {
+            return 'computer';
+        } else {
+            return 'player';
+        }
+    } else if (userChoice === 'lizard') {
+        if (aiChoice === 'rock' || aiChoice == 'scissors') {
+            return 'computer';
+        } else {
+            return 'player';
+        }
+    } else if (userChoice === 'spock') {
+        if (aiChoice === 'lizard' || aiChoice === 'paper') {
             return 'computer';
         } else {
             return 'player';
@@ -120,18 +138,21 @@ function getWinner(userChoice, aiChoice) {
     }
 }
 
+
+
+
 function showMoves(userChoice, aiChoice, winner) {
     moves.style.display = "flex"
     userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px;">${userChoice}</p>`;
     aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px; color:rgb(77, 187, 119);">${aiChoice}</p>`;
     if (winner === 'player') {
         userScore.innerText++;
-        displayInstructions.innerHTML = `<span style='color:#ff6b81;'> Player wins`
+        displayInstructions.innerHTML = `<span style='color:#ff6b81;'> Player wins </span>&nbsp;Go again!`
         displayOutcome.innerHTML = `<span style='color:#ff6b81;'>+1</span><br>Player`
 
     } else if (winner === 'computer') {
         aiScore.innerText++;
-        displayInstructions.innerHTML =`<span style='color:rgb(77, 187, 119);'>Comp-Wins</span>`
+        displayInstructions.innerHTML = `<span style='color:rgb(77, 187, 119);'>Comp-Wins</span>&nbsp;Try again!`
         displayOutcome.innerHTML = `<span style='color:rgb(77, 187, 119);'>+1</span><br>Comp`
     } else {
         displayInstructions.innerText = "Choose again";
@@ -157,7 +178,6 @@ function isGameOver() {
 
 
 
-
 function resetButton() {
     gameMode = 0;
     userScore.innerText = 0;
@@ -166,7 +186,7 @@ function resetButton() {
     gameModeUi.style.display = "block";
     optionsWrapper.style.display = "none";
     moves.style.display = "none"
-    rules.style.display= "block"
-    scoreArea.style.display= "none"
+    rules.style.display = "block"
+    scoreArea.style.display = "none"
 
 }

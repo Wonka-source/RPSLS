@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Inconsolata:wght@600&display=swap');
     </style>
     <script src="https://kit.fontawesome.com/2498384427.js" crossorigin="anonymous"></script>
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
 
 <body>
@@ -25,12 +25,12 @@
     <div id="score-area">
         <div class="scores">
             <h2>Player:<span id="user-score">0</span></h2>
-            
+
         </div>
 
         <div class="scores">
             <h2>Comp:<span id="ai-score">0</span></h2>
-            
+
         </div>
     </div>
     <div id="game-mode">
@@ -47,23 +47,30 @@
             <button class="btn--options" id="rock" onclick="playGame(0)"><i class="fas fa-hand-rock"></i></button>
             <button class="btn--options" id="paper" onclick="playGame(1)"><i class="fas fa-hand-paper"></i></button>
             <button class="btn--options" id="scissors" onclick="playGame(2)"><i class="fas fa-hand-scissors"></i></button>
+            <button class="btn--options" id="scissors" onclick="playGame(3)"><i class="fas fa-hand-lizard"></i></button>
+            <button class="btn--options" id="scissors" onclick="playGame(4)"><i class="fas fa-hand-spock"></i></button>
         </div>
 
         <div id="moves">
 
-            <div id="user-move" class="user-move"><i class="fas fa-hand-scissors"></i><p></p></div>
-            
+            <div id="user-move" class="user-move"><i class="fas fa-hand-scissors"></i>
+                <p></p>
+            </div>
+
             <h4 class="messages" id="display-outcome"></h4>
 
-            <div id="ai-move" class="ai-move"> <i class="fas fa-hand-scissors"></i><p></p> </div>
+            <div id="ai-move" class="ai-move"> <i class="fas fa-hand-scissors"></i>
+                <p></p>
+            </div>
 
         </div>
     </div>
     <footer id="rules">
-           <h2 class="footer">Rules</h2>
-           <br>            
-           <p class="footer">Scissors cuts Paper | Paper covers Rock | Rock smashes Scissors</p>        
-     </footer>
+        <h2 class="footer">Rules</h2>
+        <br>
+        <p class="footer">Scissors cuts Paper | Paper covers Rock | Rock smashes Scissors |
+            Lizard poisons Spock | Spock smashes scissors | Scissors decapitates lizard | Lizard eats paper | Paper disproves Spock | Spock vaporizes rock | Rock crushes scissors </p>
+    </footer>
 
 
 
