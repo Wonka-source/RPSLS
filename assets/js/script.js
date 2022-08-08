@@ -52,12 +52,10 @@ function playGame(playerChoice) {
 
         if (userScore.innerText > aiScore.innerText) {
             displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span><br>Player Wins <br> Hit RESET to play again </h3>`;
-            optionsWrapper.style.display = "none";
-            displayOutcome.style.display = "block";
+            optionsWrapper.style.display = "none";            
         } else {
             displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span> <br> Comp Wins<br> Hit RESET to play again </h3>`;
-            optionsWrapper.style.display = "none";
-            displayOutcome.style.display = "block";
+            optionsWrapper.style.display = "none";            
         }
     }
 
