@@ -1,26 +1,18 @@
 const gameModeUi = document.getElementById("game-mode");
-
 const optionsWrapper = document.getElementById("options-wrapper");
-
 const displayInstructions = document.getElementById("display-instructions");
-
 const displayOutcome = document.getElementById("display-outcome");
-
 const rules = document.getElementById("rules");
-
 const scoreArea = document.getElementById("score-area");
-
 const userScore = document.getElementById("user-score");
-
 const aiScore = document.getElementById("ai-score");
-
 const moves = document.getElementById("moves");
-
 const userMove = document.getElementById("user-move");
-
 const aiMove = document.getElementById("ai-move");
 
-
+//1 = Best 2 out of 3
+//2 = Best 3 out of 5
+//3 = Best 4 out of 7
 // gameMode = 0 (no game mode selected) 
 let gameMode = 0;
 
@@ -28,7 +20,11 @@ displayInstructions.innerHTML = `⭡ Choose a game mode to<br> play against the 
 
 
 
-/** */
+/** 
+ * starts the game by recording the game mode choice onclick
+ * hides the game mode selection 
+ * and showing the ui for score keeping, instructions, outcome and player move options
+*/
 function startGame(gameModeChoice) {
     //hide game-mode ui
     gameModeUi.style.display = "none";
@@ -42,7 +38,15 @@ function startGame(gameModeChoice) {
 
 }
 /** 
- * The main game function, called when a player clicks one of the options paper scissors or rock
+ * The main game function, called when a player 
+ * clicks one of the options paper scissors or rock
+ * runs through a round of the game by
+ * generating and recording the ai choice
+ * recording the player choice
+ * finding who won or if there was a draw
+ * showing the results
+ * and checking if the game is over
+ *  hiding the player move options if it is * 
  */
 function playGame(playerChoice) {
     let aiChoice = getComputerChoice();
@@ -62,7 +66,9 @@ function playGame(playerChoice) {
 
 
 }
-
+/**returns the players choice as a string
+ * 0 = rock, 1 = paper, 2 = scissors, 3 = lizard, 4 = spock
+ */
 
 function getPlayerChoice(playerChoice) {
     if (playerChoice === 0) {
@@ -79,7 +85,9 @@ function getPlayerChoice(playerChoice) {
 
 }
 
-
+/** generates a random number between 0 and 4 and returns a string containing the ai choice
+ * 0 = rock, 1 = paper, 2 = scissors, 3 = lizard, 4 = spock
+*/
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 5);
@@ -97,7 +105,9 @@ function getComputerChoice() {
 
 }
 
-
+/**
+ * returns a string containing who won (player or computer) or the word draw for a draw
+ */
 
 
 function getWinner(userChoice, aiChoice) {
@@ -138,7 +148,13 @@ function getWinner(userChoice, aiChoice) {
 
 
 
-
+// takes 3 variables the user choice string, ai choice string and winner string
+// sets the moves ui to visable
+// and then displays the user and ai choices in the moves ui by changeing the font awesome class of a 'i' tag and
+// styling and colouring a 'p' tag under it and setting its contents to the choice name using the choice strings
+// then it checks for the winner and ups their score by incrementing the element containing the score
+// while also showing who won in the instructions message and displaying a color coded '+1' depending on who won
+// if there was no winner the player is asked to try again and told it is a draw
 function showMoves(userChoice, aiChoice, winner) {
     moves.style.display = "flex";
     userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px;">${userChoice}</p>`;
@@ -160,9 +176,11 @@ function showMoves(userChoice, aiChoice, winner) {
 }
 
 
-//1 = Best 2 out of 3
-//2 = Best 3 out of 5
-//3 = Best 4 out of 7
+// returns true if the game is over, false if not
+// if will return true if one of the scores larger than the value of gameMode
+//gameMode = 1   =    Best 2 out of 3
+//gameMode = 2   =    Best 3 out of 5
+//gameMode = 3   =    Best 4 out of 7
 
 function isGameOver() {
 
@@ -174,8 +192,11 @@ function isGameOver() {
 }
 
 
-
-
+//resets the game by returning it to its original state
+//setting the game mode, user score and ai score back to 0
+// changeing the instructions
+// showing the game mode ui and rules
+// hiding the moves ui and score area
 function resetButton() {
     gameMode = 0;
     userScore.innerText = 0;
