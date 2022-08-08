@@ -22,9 +22,9 @@ const aiMove = document.getElementById("ai-move");
 
 
 // gameMode = 0 (no game mode selected) 
-let gameMode = 0
+let gameMode = 0;
 
-displayInstructions.innerHTML = `⭡ Choose a game mode to<br> play against the Computer`
+displayInstructions.innerHTML = `⭡ Choose a game mode to<br> play against the Computer`;
 
 
 
@@ -38,7 +38,7 @@ function startGame(gameModeChoice) {
     scoreArea.style.display = "flex";
     displayOutcome.style.display = "block";
     displayInstructions.innerText = "Pick a move";
-    rules.style.display = "none"
+    rules.style.display = "none";
 
 }
 /** 
@@ -51,11 +51,11 @@ function playGame(playerChoice) {
     if (isGameOver()) {
 
         if (userScore.innerText > aiScore.innerText) {
-            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span><br>Player Wins <br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span><br>Player Wins <br> Hit RESET to play again </h3>`;
             optionsWrapper.style.display = "none";
             displayOutcome.style.display = "block";
         } else {
-            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span> <br> Comp Wins<br> Hit RESET to play again </h3>`
+            displayInstructions.innerHTML = `<h3><span style='color:rgb(208, 214, 117);'>⭡ Game Over</span> <br> Comp Wins<br> Hit RESET to play again </h3>`;
             optionsWrapper.style.display = "none";
             displayOutcome.style.display = "block";
         }
@@ -142,18 +142,18 @@ function getWinner(userChoice, aiChoice) {
 
 
 function showMoves(userChoice, aiChoice, winner) {
-    moves.style.display = "flex"
+    moves.style.display = "flex";
     userMove.innerHTML = `<i  class="fas fa-hand-${userChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px;">${userChoice}</p>`;
     aiMove.innerHTML = `<i  class="fas fa-hand-${aiChoice}"></i><br><p style="text-transform:uppercase; font-size:30%; margin-top:20px; color:rgb(77, 187, 119);">${aiChoice}</p>`;
     if (winner === 'player') {
         userScore.innerText++;
-        displayInstructions.innerHTML = `<span style='color:#ff6b81;'> Player wins </span>&nbsp;Go again!`
-        displayOutcome.innerHTML = `<span style='color:#ff6b81;'>+1</span><br>Player`
+        displayInstructions.innerHTML = `<span style='color:#ff6b81;'> Player wins </span>&nbsp;Go again!`;
+        displayOutcome.innerHTML = `<span style='color:#ff6b81;'>+1</span><br>Player`;
 
     } else if (winner === 'computer') {
         aiScore.innerText++;
-        displayInstructions.innerHTML = `<span style='color:rgb(77, 187, 119);'>Comp-Wins</span>&nbsp;Try again!`
-        displayOutcome.innerHTML = `<span style='color:rgb(77, 187, 119);'>+1</span><br>Comp`
+        displayInstructions.innerHTML = `<span style='color:rgb(77, 187, 119);'>Comp-Wins</span>&nbsp;Try again!`;
+        displayOutcome.innerHTML = `<span style='color:rgb(77, 187, 119);'>+1</span><br>Comp`;
     } else {
         displayInstructions.innerText = "Choose again";
         displayOutcome.innerHTML = "It's<br>a Draw";
@@ -185,8 +185,8 @@ function resetButton() {
     displayInstructions.innerText = "⭡ Choose a game mode ";
     gameModeUi.style.display = "block";
     optionsWrapper.style.display = "none";
-    moves.style.display = "none"
-    rules.style.display = "block"
-    scoreArea.style.display = "none"
+    moves.style.display = "none";
+    rules.style.display = "block";
+    scoreArea.style.display = "none";
 
 }
