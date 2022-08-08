@@ -92,8 +92,7 @@ header {
     width: 200px;
     height: 200px;
     font-weight: bold;
-    color: #fe2e4e;
-    background-color: linear-gradient(rgba(174, 188, 180, 0.9), rgba(108, 117, 112, 0.8));
+    color: #fe2e4e;    
 }
 
 #game-mode button:hover {
@@ -190,8 +189,7 @@ i p {
     position: absolute;
     width: 100%;
     left: 15%;
-    right: 15%;
-    bottom: 10;
+    right: 15%;    
     font-size: 120%;
     min-height: 80px;
     border: solid 1px;
